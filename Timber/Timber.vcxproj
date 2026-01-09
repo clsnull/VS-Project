@@ -101,6 +101,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>F:\project\VS-Project\SFML-3.0.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-network.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,6 +117,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>F:\project\VS-Project\SFML-3.0.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,10 +135,31 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>F:\project\VS-Project\SFML-3.0.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-network.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Timber.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="graphics\axe.png" />
+    <Image Include="graphics\background.png" />
+    <Image Include="graphics\bee.png" />
+    <Image Include="graphics\branch.png" />
+    <Image Include="graphics\cloud.png" />
+    <Image Include="graphics\log.png" />
+    <Image Include="graphics\player.png" />
+    <Image Include="graphics\rip.png" />
+    <Image Include="graphics\tree.png" />
+    <Image Include="graphics\tree2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\KOMIKAP_.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\chop.wav" />
+    <Media Include="sound\death.wav" />
+    <Media Include="sound\out_of_time.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

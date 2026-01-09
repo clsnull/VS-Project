@@ -19,4 +19,52 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="graphics\axe.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\background.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\bee.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\branch.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\cloud.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\log.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\player.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\rip.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\tree.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="graphics\tree2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\KOMIKAP_.ttf">
+      <Filter>资源文件</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\chop.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="sound\death.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="sound\out_of_time.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

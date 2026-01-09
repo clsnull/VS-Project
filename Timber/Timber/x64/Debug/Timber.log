@@ -1,0 +1,11 @@
+﻿Timber.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __cdecl sf::VideoMode::VideoMode(class sf::Vector2<unsigned int>,unsigned int)" (__imp_??0VideoMode@sf@@QEAA@V?$Vector2@I@1@I@Z)，函数 main 中引用了该符号
+Timber.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __cdecl sf::String::String(char const *,class std::locale const &)" (__imp_??0String@sf@@QEAA@PEBDAEBVlocale@std@@@Z)，函数 main 中引用了该符号
+Timber.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __cdecl sf::String::~String(void)" (__imp_??1String@sf@@QEAA@XZ)，函数 main 中引用了该符号
+Timber.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __cdecl sf::RenderWindow::RenderWindow(class sf::VideoMode,class sf::String const &,unsigned int,enum sf::State,struct sf::ContextSettings const &)" (__imp_??0RenderWindow@sf@@QEAA@VVideoMode@1@AEBVString@1@IW4State@1@AEBUContextSettings@1@@Z)，函数 main 中引用了该符号
+Timber.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: virtual __cdecl sf::RenderWindow::~RenderWindow(void)" (__imp_??1RenderWindow@sf@@UEAA@XZ)，函数 main 中引用了该符号
+F:\project\VS-Project\SFML-3.0.2\lib\sfml-graphics-d.lib : warning LNK4272: 库计算机类型“x86”与目标计算机类型“x64”冲突
+F:\project\VS-Project\SFML-3.0.2\lib\sfml-window-d.lib : warning LNK4272: 库计算机类型“x86”与目标计算机类型“x64”冲突
+F:\project\VS-Project\SFML-3.0.2\lib\sfml-system-d.lib : warning LNK4272: 库计算机类型“x86”与目标计算机类型“x64”冲突
+F:\project\VS-Project\SFML-3.0.2\lib\sfml-network-d.lib : warning LNK4272: 库计算机类型“x86”与目标计算机类型“x64”冲突
+F:\project\VS-Project\SFML-3.0.2\lib\sfml-audio-d.lib : warning LNK4272: 库计算机类型“x86”与目标计算机类型“x64”冲突
+F:\project\VS-Project\Timber\x64\Debug\Timber.exe : fatal error LNK1120: 5 个无法解析的外部命令
