@@ -1,1 +1,12 @@
-﻿  Timber.vcxproj -> F:\project\VS-Project\Timber\Debug\Timber.exe
+﻿  Timber.cpp
+F:\project\VS-Project\Timber\Timber.cpp(74,28): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+F:\project\VS-Project\Timber\Timber.cpp(83,30): warning C4834: 放弃具有 [[nodiscard]] 属性的函数的返回值
+F:\project\VS-Project\Timber\Timber.cpp(143,43): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+F:\project\VS-Project\Timber\Timber.cpp(146,30): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+F:\project\VS-Project\Timber\Timber.cpp(164,39): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+F:\project\VS-Project\Timber\Timber.cpp(167,30): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+F:\project\VS-Project\Timber\Timber.cpp(184,39): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+F:\project\VS-Project\Timber\Timber.cpp(187,30): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+F:\project\VS-Project\Timber\Timber.cpp(204,39): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+F:\project\VS-Project\Timber\Timber.cpp(207,30): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  Timber.vcxproj -> F:\project\VS-Project\Timber\Debug\Timber.exe
