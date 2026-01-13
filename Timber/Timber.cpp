@@ -5,6 +5,16 @@
 #include <cmath>
 #include <sstream>
 
+
+void updateBranches(int seed);
+
+const int NUM_BARNCHES = 6;
+sf::Sprite* branches[NUM_BARNCHES];
+
+enum class side { LEFT, RIGHT, NONE };
+
+side branchPositions[NUM_BARNCHES];
+
 int main()
 {
     const unsigned int WINDOW_WIDTH = 1920;
@@ -45,12 +55,23 @@ int main()
     scoreText.setFillColor(sf::Color::White);
 
     scoreText.setPosition(sf::Vector2f(20, 20));
+
     sf::FloatRect textRect = messageText.getLocalBounds();
     messageText.setOrigin({
         textRect.position.x + textRect.size.x / 2.0f ,
         textRect.position.y + textRect.size.y / 2.0f
     });
     messageText.setPosition({ WINDOW_WIDTH / 2.0f, WINDOW_HEIGHT / 2.0f });
+
+    sf::Texture textureBranch;
+    textureBranch.loadFromFile("graphics/branch.png");
+
+    for (int i = 0; i < NUM_BARNCHES; i++) {
+        branches[i] = new sf::Sprite(textureBranch);
+        branches[i] -> setPosition(sf::Vector2f(-2000, -2000));
+
+        branches[i] -> setOrigin(sf::Vector2f(220, 20));
+    }
 
     sf::Vector2u vec(WINDOW_WIDTH, WINDOW_HEIGHT);
     sf::VideoMode vm(vec);
@@ -232,6 +253,21 @@ int main()
             std::stringstream ss;
             ss << "Score = " << score;
             scoreText.setString(ss.str());
+
+            for (int i = 0; i < NUM_BARNCHES; i++) {
+                float height = i * 150;
+                if (branchPositions[i] == side::LEFT) {
+                    branches[i]->setPosition({ 610, height });
+                    branches[i]->setRotation(sf::degrees(180));
+                }
+                else if (branchPositions[i] == side::RIGHT) {
+                    branches[i]->setPosition({ 1330, height });
+                    branches[i]->setRotation(sf::degrees(0));
+                }
+                else {
+                    branches[i]->setPosition({ 3000, height });
+                }
+            }
         }
         
         window.draw(spriteBackground);
@@ -239,6 +275,10 @@ int main()
         window.draw(spriteCloud1);
         window.draw(spriteCloud2);
         window.draw(spriteCloud3);
+
+        for (int i = 0; i < NUM_BARNCHES; i++) {
+            window.draw(*branches[i]);
+        }
 
         window.draw(spriteTree);
         window.draw(timeBar);
@@ -254,5 +294,14 @@ int main()
 
         window.display();
     }
+    for (int i = 0; i < NUM_BARNCHES; i++) {
+        delete branches[i];
+    }
     return 0;
+}
+
+void updateBranches(int seed) {
+    for (int j = NUM_BARNCHES - 1; j > 0; j--) {
+        branchPositions[j] = branchPositions[j - 1];
+    }
 }
