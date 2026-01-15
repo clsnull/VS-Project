@@ -1,23 +1,23 @@
 ﻿  Timber.cpp
-G:\project\VS Project\Timber\Timber.cpp(73,31): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(101,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(110,30): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(137,31): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(144,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(149,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(157,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(168,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(172,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(176,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
-G:\project\VS Project\Timber\Timber.cpp(217,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(238,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(279,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(282,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(300,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(303,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(320,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(323,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(340,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(343,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-G:\project\VS Project\Timber\Timber.cpp(373,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(75,31): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(103,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(112,30): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(136,31): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(143,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(148,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(156,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(167,28): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(171,29): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(175,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
+G:\project\VS Project\Timber\Timber.cpp(216,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(237,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(278,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(281,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(303,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(306,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(310,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(313,49): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(317,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(320,49): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+G:\project\VS Project\Timber\Timber.cpp(345,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Timber.vcxproj -> G:\project\VS Project\Timber\Debug\Timber.exe
