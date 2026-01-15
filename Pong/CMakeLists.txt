@@ -7,7 +7,7 @@ endif()
 
 project ("Pong")
 
-add_executable (Pong "main.cpp" )
+add_executable (Pong "main.cpp"   "Bat.h" "Bat.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Pong PROPERTY CXX_STANDARD 17)

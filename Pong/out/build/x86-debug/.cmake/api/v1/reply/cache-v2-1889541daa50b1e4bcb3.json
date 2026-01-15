@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lib.exe"
+			"value" : "D:/vscode-studio/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lib.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -23,7 +23,7 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "STRING",
@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "g:/project/VS Project/Pong/out/build/x86-debug"
+			"value" : "f:/project/VS-Project/Pong/out/build/x86-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -87,7 +87,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe"
+			"value" : "D:/vscode-studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -99,7 +99,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cpack.exe"
+			"value" : "D:/vscode-studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -111,7 +111,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe"
+			"value" : "D:/vscode-studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -126,7 +126,7 @@
 					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "UNINITIALIZED",
+			"type" : "STRING",
 			"value" : "cl.exe"
 		},
 		{
@@ -238,7 +238,7 @@
 					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "UNINITIALIZED",
+			"type" : "STRING",
 			"value" : "cl.exe"
 		},
 		{
@@ -483,7 +483,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "G:/project/VS Project/Pong/out/build/x86-debug/CMakeFiles/pkgRedirects"
+			"value" : "F:/project/VS-Project/Pong/out/build/x86-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "G:/project/VS Project/Pong"
+			"value" : "F:/project/VS-Project/Pong"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -551,11 +551,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "Install path prefix, prepended onto install directories."
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "PATH",
-			"value" : "G:/project/VS Project/Pong/out/install/x86-debug"
+			"value" : "F:/project/VS-Project/Pong/out/install/x86-debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -571,7 +571,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe"
+			"value" : "D:/vscode-studio/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -579,11 +579,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "make program"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "D:/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe"
+			"type" : "UNINITIALIZED",
+			"value" : "d:\\vscode-studio\\common7\\ide\\commonextensions\\microsoft\\cmake\\Ninja\\ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Windows Kits/10/bin/10.0.26100.0/x64/mt.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -714,8 +714,8 @@
 					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "G:/project/VS Project/SFML-3.0.2"
+			"type" : "STRING",
+			"value" : "F:/project/VS-Project/SFML-3.0.2"
 		},
 		{
 			"name" : "CMAKE_PROJECT_DESCRIPTION",
@@ -779,7 +779,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/Windows Kits/10/bin/10.0.26100.0/x64/rc.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -883,7 +883,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31"
+			"value" : "D:/vscode-studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1103,7 +1103,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "G:/project/VS Project/Pong/out/build/x86-debug"
+			"value" : "F:/project/VS-Project/Pong/out/build/x86-debug"
 		},
 		{
 			"name" : "Pong_IS_TOP_LEVEL",
@@ -1127,7 +1127,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "G:/project/VS Project/Pong"
+			"value" : "F:/project/VS-Project/Pong"
 		},
 		{
 			"name" : "SFML_DIR",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "G:/project/VS Project/SFML-3.0.2/lib/cmake/SFML"
+			"value" : "F:/project/VS-Project/SFML-3.0.2/lib/cmake/SFML"
 		},
 		{
 			"name" : "SFML_DOC_DIR",
@@ -1152,18 +1152,6 @@
 			],
 			"type" : "PATH",
 			"value" : "SFML_DOC_DIR-NOTFOUND"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "FALSE"
 		}
 	],
 	"kind" : "cache",
