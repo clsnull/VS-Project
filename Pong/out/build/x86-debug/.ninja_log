@@ -1,3 +1,5 @@
 # ninja log v6
-4	1107	7901877526533923	CMakeFiles/Pong.dir/main.cpp.obj	ab952d81c8021a87
-1113	1441	7901877537620403	Pong.exe	1402ef75ddbf04d5
+6	981	7902604744365985	CMakeFiles/Pong.dir/main.cpp.obj	d27650986d26e21d
+7	1746	7902366545996631	CMakeFiles/Pong.dir/Bat.cpp.obj	87782caaecccbb8a
+982	1221	7902604754124897	Pong.exe	a86bf273266b3291
+80	1549	7902601145781209	CMakeFiles/Pong.dir/Ball.cpp.obj	def93ee486ec205f
