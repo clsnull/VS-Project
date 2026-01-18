@@ -62,7 +62,7 @@ int main()
 		ss << "Score:" << score << " Lives:" << lives;
 		hub.setString(ss.str());
 
-		if (ball.getPosition().position.x > window.getSize().y) {
+		if (ball.getPosition().position.y > window.getSize().y) {
 			ball.reboundBottom();
 			lives--;
 			if (lives < 1) {
@@ -70,7 +70,7 @@ int main()
 				lives = 3;
 			}
 		}
-		if (ball.getPosition().position.x < 0) {
+		if (ball.getPosition().position.y < 0) {
 			ball.reboundBatOrTop();
 			score++;
 		}

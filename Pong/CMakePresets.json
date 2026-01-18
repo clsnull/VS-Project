@@ -47,7 +47,7 @@
             },
           "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Debug",
-            "CMAKE_PREFIX_PATH": "G:/project/VS Project/SFML-3.0.2"
+            "CMAKE_PREFIX_PATH": "f:/project/VS-Project/SFML-3.0.2"
           }
         },
         {

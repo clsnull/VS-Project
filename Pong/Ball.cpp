@@ -26,9 +26,9 @@ void Ball::reboundBatOrTop() {
 }
 
 void Ball::reboundBottom() {
-	m_position.y = 0;
+	m_position.y = 10;
 	m_position.x = 500;
-	m_directionY = -m_directionY;
+	m_directionY = m_directionY;
 }
 
 void Ball::update(sf::Time dt) {

@@ -1,7 +1,7 @@
 #include "Bat.h"
 
 Bat::Bat(float startX, float startY) :m_position(startX, startY) {
-	m_shape.setSize(sf::Vector2f(50, 5));
+	m_shape.setSize(sf::Vector2f(120, 5));
 	m_shape.setPosition(m_position);
 }
 

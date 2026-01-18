@@ -5,7 +5,7 @@ class Ball {
 private:
 	sf::Vector2f m_position;
 	sf::RectangleShape m_shape;
-	float m_speed = 300.0f;
+	float m_speed = 1000.0f;
 	float m_directionX = .2f;
 	float m_directionY = .2f;
 public:

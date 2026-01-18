@@ -22,8 +22,8 @@
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"G:/project/VS Project/SFML-3.0.2/lib/cmake/SFML/SFMLWindowSharedTargets.cmake",
-			"G:/project/VS Project/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake"
+			"F:/project/VS-Project/SFML-3.0.2/lib/cmake/SFML/SFMLWindowSharedTargets.cmake",
+			"F:/project/VS-Project/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -84,7 +84,7 @@
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "G:/project/VS Project/SFML-3.0.2/include"
+					"path" : "F:/project/VS-Project/SFML-3.0.2/include"
 				}
 			],
 			"language" : "CXX",
@@ -119,22 +119,22 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "\"G:\\project\\VS Project\\SFML-3.0.2\\lib\\sfml-graphics-d.lib\"",
+				"fragment" : "F:\\project\\VS-Project\\SFML-3.0.2\\lib\\sfml-graphics-d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "\"G:\\project\\VS Project\\SFML-3.0.2\\lib\\sfml-audio-d.lib\"",
+				"fragment" : "F:\\project\\VS-Project\\SFML-3.0.2\\lib\\sfml-audio-d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "\"G:\\project\\VS Project\\SFML-3.0.2\\lib\\sfml-window-d.lib\"",
+				"fragment" : "F:\\project\\VS-Project\\SFML-3.0.2\\lib\\sfml-window-d.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 7,
-				"fragment" : "\"G:\\project\\VS Project\\SFML-3.0.2\\lib\\sfml-system-d.lib\"",
+				"fragment" : "F:\\project\\VS-Project\\SFML-3.0.2\\lib\\sfml-system-d.lib",
 				"role" : "libraries"
 			},
 			{
