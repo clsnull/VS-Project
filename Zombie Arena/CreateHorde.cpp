@@ -16,9 +16,9 @@ Zombie * createHorde(int numZombies, sf::IntRect arena) {
 
 		switch (side) {
 		case 0:
-				x = minX;
-				y = (rand() % maxY) + minY;
-				break;
+			x = minX;
+			y = (rand() % maxY) + minY;
+			break;
 		case 1:
 			x = maxX;
 			y = (rand() % maxY) + minY;
@@ -34,8 +34,10 @@ Zombie * createHorde(int numZombies, sf::IntRect arena) {
 		}
 
 		srand((int)time(0) * i * 2);
+
 		int type = (rand() % 3);
 
 		zombies[i].spawn(x, y, type, i);
 	}
+	return zombies;
 }

@@ -1,19 +1,14 @@
 #include "Player.h"
 #include <cmath>
 #include <iostream>
-#include <filesystem>
+#include "TextureHolder.h"
 
 Player::Player()
 	: m_speed(START_SPEED),
 	m_health(START_HEALTH),
-	m_maxHealth(START_HEALTH),
-	m_texture()
+	m_maxHealth(START_HEALTH)
 {
-	std::filesystem::path path("graphics/player.png");
-	if (!m_texture.loadFromFile(std::filesystem::absolute(path)))
-	{
-		std::cout << "¼ÓÔØÎÄ¼þÊ§°Ü graphics/player.png " << std::endl;
-	}
+	m_texture = TextureHolder::getTexture("graphics/player.png");
 	m_sprite = std::make_unique<sf::Sprite>(m_texture);
 	m_sprite->setOrigin(sf::Vector2f(25, 25));
 }

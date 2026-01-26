@@ -2,9 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Zombie Arena.h"
+#include "TextureHolder.h"
+#include "Bullet.h"
 
 int main()
 {
+    TextureHolder holder;
+
     enum class State
     {
         PAUSED,
@@ -34,11 +38,20 @@ int main()
 
     sf::VertexArray background;
 
-    sf::Texture textureBackground;
-    if (!textureBackground.loadFromFile("graphics/background_sheet.png"))
-    {
-        std::cout << "加载背景失败" << std::endl;
-    }
+    sf::Texture textureBackground = TextureHolder::getTexture("graphics/background_sheet.png");
+
+    int numZombies;
+	int numZombiesAlive;
+
+	Zombie* zombies = nullptr;
+
+    Bullet bullets[100];
+	int currentBullet = 0;
+    int bulletsSpare = 24;
+	int bulletsInClip = 6;
+	int clipSize = 6;
+	float fireRate = 1;
+	sf::Time lastPressed;
 
     while (window.isOpen())
     {
@@ -68,6 +81,18 @@ int main()
                 }
                 if (state == State::PLAYING)
                 {
+                    if (code == sf::Keyboard::Key::R) {
+                        if(bulletsSpare >= clipSize) {
+                            bulletsInClip = clipSize;
+                            bulletsSpare -= clipSize;
+                        } else if(bulletsSpare > 0) {
+                            bulletsInClip = bulletsSpare;
+                            bulletsSpare = 0;
+                        }
+                        else {
+							// 没有子弹了
+                        }
+                    }
                 }
 
                 if (state == State::LEVELING_UP)
@@ -109,6 +134,12 @@ int main()
                         // Spawn  the player  in middle  of  the  arena
                         std::cout << "spawn" << std::endl;
                         player.spawn(arena, resolution, tileSize);
+
+                        numZombies = 10;
+
+                        delete[] zombies;
+						zombies = createHorde(numZombies, arena);
+						numZombiesAlive = numZombies;
 
                         // Reset  clock  so  there  isn't  a frame jump
                         clock.restart();
@@ -161,6 +192,10 @@ int main()
                 player.stopRight();
             }
 
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
+                
+            }
+
             sf::Time dt = clock.restart();
 
             gameTimeTotal += dt;
@@ -174,6 +209,12 @@ int main()
             sf::Vector2f playerPosition(player.getCenter());
 
             mainView.setCenter(player.getCenter());
+
+            for (int i = 0; i < numZombies; i++) {
+                if(zombies[i].isAlive()) {
+                    zombies[i].update(dtAsSeconds, playerPosition);
+				}
+            }
         }
 
         if (state == State::PLAYING)
@@ -181,9 +222,18 @@ int main()
             window.clear();
             window.setView(mainView);
             window.draw(background, &textureBackground);
+
+            for (int i = 0; i < numZombies; i++) {
+                window.draw(zombies[i].getSprite());
+            }
+
             window.draw(player.getSprite());
         }
+
         window.display();
     }
+
+	delete[] zombies;
+
     return 0;
 }

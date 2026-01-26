@@ -16,7 +16,7 @@ class Zombie
 	const int OFFSET = 101 - MAX_VARRIANCE;
 
 	sf::Vector2f m_position;
-	sf::Sprite m_sprite;
+	std::unique_ptr<sf::Sprite> m_sprite;
 
 	float m_speed;
 
@@ -29,7 +29,7 @@ public:
 	bool isAlive();
 	void spawn(float startX, float startY,int type, int seed);
 	sf::FloatRect getPosition();
-	sf::Sprite getSprite();
+	sf::Sprite& getSprite();
 	void update(float elapsedTime, sf::Vector2f playerPosition);
 };
 
