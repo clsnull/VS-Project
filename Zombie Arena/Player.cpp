@@ -1,14 +1,21 @@
 #include "Player.h"
+#include <cmath>
+#include <iostream>
+#include <filesystem>
 
 Player::Player()
-	:m_speed(START_SPEED),
+	: m_speed(START_SPEED),
 	m_health(START_HEALTH),
 	m_maxHealth(START_HEALTH),
-	m_texture(),
-	m_sprite(m_texture) 
+	m_texture()
 {
-	m_texture.loadFromFile("graphics/player.png");
-	m_sprite.setOrigin(sf::Vector2f(25, 25));
+	std::filesystem::path path("graphics/player.png");
+	if (!m_texture.loadFromFile(std::filesystem::absolute(path)))
+	{
+		std::cout << "¼ÓÔØÎÄ¼þÊ§°Ü graphics/player.png " << std::endl;
+	}
+	m_sprite = std::make_unique<sf::Sprite>(m_texture);
+	m_sprite->setOrigin(sf::Vector2f(25, 25));
 }
 
 void Player::spawn(sf::IntRect arena, sf::Vector2f resolution, int tileSize)
@@ -27,119 +34,154 @@ void Player::spawn(sf::IntRect arena, sf::Vector2f resolution, int tileSize)
 	m_resoultion.y = resolution.y;
 }
 
-void Player::resetPlayerStats() {
+void Player::resetPlayerStats()
+{
 	m_speed = START_SPEED;
 	m_health = START_HEALTH;
 	m_maxHealth = START_HEALTH;
 }
 
-sf::Time Player::getLastHitTime() {
+sf::Time Player::getLastHitTime()
+{
 	return m_lastHit;
 }
 
-bool Player::hit(sf::Time timeHit) {
-	if (timeHit.asMilliseconds() - m_lastHit.asMilliseconds() > 200) {
+bool Player::hit(sf::Time timeHit)
+{
+	if (timeHit.asMilliseconds() - m_lastHit.asMilliseconds() > 200)
+	{
 		m_lastHit = timeHit;
 		m_health -= 10;
 		return true;
 	}
-	else {
+	else
+	{
 		return false;
 	}
 }
 
-sf::FloatRect Player::getPosition() {
-	return m_sprite.getGlobalBounds();
+sf::FloatRect Player::getPosition()
+{
+	return m_sprite->getGlobalBounds();
 }
 
-sf::Vector2f Player::getCenter() {
+sf::Vector2f Player::getCenter()
+{
 	return m_position;
 }
 
-sf::Angle Player::getRotation() {
-	return m_sprite.getRotation();
+sf::Angle Player::getRotation()
+{
+	return m_sprite->getRotation();
 }
 
-int Player::getHealth() {
+int Player::getHealth()
+{
 	return m_health;
 }
 
-void Player::moveLeft() {
+void Player::moveLeft()
+{
 	m_leftPressed = true;
 }
 
-void Player::moveRight() {
+void Player::moveRight()
+{
 	m_rightPressed = true;
 }
 
-void Player::moveUp() {
+void Player::moveUp()
+{
 	m_upPressed = true;
 }
 
-void Player::moveDown() {
+void Player::moveDown()
+{
 	m_downPressed = true;
 }
 
-void Player::stopLeft() {
+void Player::stopLeft()
+{
 	m_leftPressed = false;
 }
 
-void Player::stopRight() {
+void Player::stopRight()
+{
 	m_rightPressed = false;
 }
 
-void Player::stopUp() {
+void Player::stopUp()
+{
 	m_upPressed = false;
 }
 
-void Player::stopDown() {
+void Player::stopDown()
+{
 	m_downPressed = false;
 }
 
-void Player::update(float elapsedTime, sf::Vector2i mousePosition) {
-	if (m_upPressed) {
+void Player::update(float elapsedTime, sf::Vector2i mousePosition)
+{
+	if (m_upPressed)
+	{
 		m_position.y -= m_speed * elapsedTime;
 	}
-	if (m_downPressed) {
+	if (m_downPressed)
+	{
 		m_position.y += m_speed * elapsedTime;
 	}
-	if (m_rightPressed) {
+	if (m_rightPressed)
+	{
 		m_position.x += m_speed * elapsedTime;
 	}
-	if (m_leftPressed) {
+	if (m_leftPressed)
+	{
 		m_position.x -= m_speed * elapsedTime;
 	}
 
-	m_sprite.setPosition(m_position);
+	m_sprite->setPosition(m_position);
 
-	if(m_position.x > m_arena.size.x - m_tileSize){
+	if (m_position.x > m_arena.size.x - m_tileSize)
+	{
 		m_position.x = m_arena.size.x - m_tileSize;
 	}
-	if (m_position.x < m_arena.position.x + m_tileSize) {
+	if (m_position.x < m_arena.position.x + m_tileSize)
+	{
 		m_position.x = m_arena.position.x + m_tileSize;
 	}
-	if (m_position.y > m_arena.size.y - m_tileSize) {
+	if (m_position.y > m_arena.size.y - m_tileSize)
+	{
 		m_position.y = m_arena.size.y - m_tileSize;
 	}
-	if (m_position.y < m_arena.position.y + m_tileSize) {
+	if (m_position.y < m_arena.position.y + m_tileSize)
+	{
 		m_position.y = m_arena.position.y + m_tileSize;
 	}
 
 	float angle = (atan2(mousePosition.y - m_resoultion.y / 2, mousePosition.x - m_resoultion.x / 2) * 180) / 3.141;
 
-	m_sprite.setRotation(sf::degrees(angle));
+	m_sprite->setRotation(sf::degrees(angle));
 }
 
-void Player::upgradeSpeed() {
+void Player::upgradeSpeed()
+{
 	m_speed += (START_SPEED * 0.2);
 }
-void Player::upgradHealth() {
+void Player::upgradHealth()
+{
 	m_maxHealth += (START_HEALTH * 0.2);
 }
 
-void Player::increaseHealthLevel(int amount) {
+void Player::increaseHealthLevel(int amount)
+{
 	m_health += amount;
-	if (m_health > m_maxHealth) {
+	if (m_health > m_maxHealth)
+	{
 		m_health = m_maxHealth;
 	}
+}
+
+sf::Sprite& Player::getSprite()
+{
+	return *m_sprite;
 }

@@ -1,28 +1,29 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Player {
+class Player
+{
 private:
 	const float START_SPEED = 200;
 	const float START_HEALTH = 100;
 	// 玩家位置
 	sf::Vector2f m_position;
 	// 精灵
-	sf::Sprite m_sprite;
+	std::unique_ptr<sf::Sprite> m_sprite;
 	// 纹理
 	sf::Texture m_texture;
-	//屏幕分辨率是多少
+	// 屏幕分辨率是多少
 	sf::Vector2f m_resoultion;
-	//当前场景的大小
+	// 当前场景的大小
 	sf::IntRect m_arena;
 	// 场景的每个图块（tile)有多大
 	int m_tileSize;
-	//玩家正在向那个方向移动
+	// 玩家正在向那个方向移动
 	bool m_upPressed;
 	bool m_downPressed;
 	bool m_leftPressed;
 	bool m_rightPressed;
-	// 玩家有多少生命值 
+	// 玩家有多少生命值
 	int m_health;
 	// 玩家最多能拥有的生命值是多少
 	int m_maxHealth;
@@ -30,6 +31,7 @@ private:
 	sf::Time m_lastHit;
 	// 速度
 	float m_speed;
+
 public:
 	Player();
 	void spawn(sf::IntRect arena, sf::Vector2f resolution, int tileSize);
@@ -39,7 +41,7 @@ public:
 	sf::FloatRect getPosition();
 	sf::Vector2f getCenter();
 	sf::Angle getRotation();
-	sf::Sprite getSprite();
+	sf::Sprite& getSprite();
 	void moveLeft();
 	void moveRight();
 	void moveUp();
