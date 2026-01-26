@@ -22,7 +22,7 @@ class Zombie
 
 	float m_health;
 
-	bool m_alive;
+	bool m_alive = true;
 
 public:
 	bool hit();

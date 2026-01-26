@@ -1,2 +1,38 @@
-﻿  TextureHolder.cpp
-  Zombie Arena.vcxproj -> G:\project\VS Project\Zombie Arena\Debug\Zombie Arena.exe
+﻿  Zombie Arena.cpp
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:         with
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:             T=unsigned int
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:         ]
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:         and
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:             T=float
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(24,56): warning C4244:         ]
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:         with
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:             T=unsigned int
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:         ]
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:         and
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:             T=float
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(25,56): warning C4244:         ]
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:         with
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:             T=float
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:         ]
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:         and
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:             T=unsigned int
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,80): warning C4244:         ]
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:         with
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:             T=float
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:         ]
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:         and
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:         [
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:             T=unsigned int
+F:\project\VS-Project\Zombie Arena\Zombie Arena.cpp(27,66): warning C4244:         ]
+  Zombie Arena.vcxproj -> F:\project\VS-Project\Zombie Arena\Debug\Zombie Arena.exe

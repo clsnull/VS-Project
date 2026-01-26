@@ -3,7 +3,6 @@
 Bullet::Bullet()
 {
 	m_bulletShape.setSize(sf::Vector2f(2, 2));
-	m_bulletShape.setFillColor(sf::Color::Red);
 }
 
 void Bullet::shoot(float startX, float startY, float targetX, float targetY)

@@ -4,6 +4,7 @@
 #include "Zombie Arena.h"
 #include "TextureHolder.h"
 #include "Bullet.h"
+#include "Pickup.h"
 
 int main()
 {
@@ -53,6 +54,16 @@ int main()
 	float fireRate = 1;
 	sf::Time lastPressed;
 
+    window.setMouseCursorVisible(false);
+
+    sf::Sprite spriteCrosshair(TextureHolder::getTexture("graphics/crosshair.png"));
+	spriteCrosshair.setOrigin({ 25, 25 });
+
+	Pickup healthPickup(1);
+	Pickup ammoPickup(2);
+
+    int score = 0;
+    int hiScore = 0;
     while (window.isOpen())
     {
 
@@ -135,6 +146,9 @@ int main()
                         std::cout << "spawn" << std::endl;
                         player.spawn(arena, resolution, tileSize);
 
+						healthPickup.setArena(arena);
+						ammoPickup.setArena(arena);
+
                         numZombies = 10;
 
                         delete[] zombies;
@@ -193,7 +207,18 @@ int main()
             }
 
             if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-                
+                if(gameTimeTotal.asMilliseconds() - lastPressed.asMilliseconds() > 1000 / fireRate && bulletsInClip > 0) {
+					bullets[currentBullet].shoot(
+                        player.getCenter().x, player.getCenter().y, 
+                        mouseWorldPosition.x, mouseWorldPosition.y
+                    );
+					currentBullet++;
+                    if(currentBullet > 99) {
+                        currentBullet = 0;
+					}
+					lastPressed = gameTimeTotal;
+					bulletsInClip--;
+				}
             }
 
             sf::Time dt = clock.restart();
@@ -203,6 +228,8 @@ int main()
             mouseScreenPosition = sf::Mouse::getPosition();
 
             mouseWorldPosition = window.mapPixelToCoords(sf::Mouse::getPosition(), mainView);
+
+			spriteCrosshair.setPosition(mouseWorldPosition);
 
             player.update(dtAsSeconds, sf::Mouse::getPosition());
 
@@ -215,6 +242,64 @@ int main()
                     zombies[i].update(dtAsSeconds, playerPosition);
 				}
             }
+            for (int i = 0; i < 100; i++) {
+                if (bullets[i].isInFlight()) {
+                    bullets[i].update(dtAsSeconds);
+                }
+            }
+
+			healthPickup.update(dtAsSeconds);
+			ammoPickup.update(dtAsSeconds);
+
+            //Åö×²¼ì²â
+            for (int i = 0; i < 100; i++) {
+                if(bullets[i].isInFlight() == false) {
+                    continue;
+                }
+                for (int j = 0; j < numZombies; j++) {
+                    if(zombies[j].isAlive() == false) {
+                        continue;
+					}
+                    if (bullets[i].getPosition().findIntersection(zombies[j].getPosition())) {
+						bullets[i].stop();
+
+                        if (zombies[j].hit()) {
+                            score += 10;
+                            if (score >= hiScore) {
+								hiScore = score;
+                            }
+
+                            numZombiesAlive--;
+
+                            if(numZombiesAlive == 0) {
+                                state = State::LEVELING_UP;
+							}
+                        }
+                    }
+                }
+			}
+
+            for (int i = 0; i < numZombies; i++) {
+                if (zombies[i].isAlive() == false) continue;
+
+                if (player.getPosition().findIntersection(zombies[i].getPosition())) {
+                    if (player.hit(gameTimeTotal)) {
+
+                    }
+                    if (player.getHealth() <= 0) {
+                        state = State::GAME_OVER;
+                        std::cout << "ÓÎÏ·½áÊø\n";
+                    }
+                }
+            }
+
+            if (player.getPosition().findIntersection(healthPickup.getPosition()) && healthPickup.isSpawned()) {
+				player.increaseHealthLevel(healthPickup.gotIt());
+            }
+
+            if (player.getPosition().findIntersection(ammoPickup.getPosition()) && ammoPickup.isSpawned()) {
+				bulletsSpare += ammoPickup.gotIt();
+            }
         }
 
         if (state == State::PLAYING)
@@ -224,10 +309,39 @@ int main()
             window.draw(background, &textureBackground);
 
             for (int i = 0; i < numZombies; i++) {
+
+                sf::RectangleShape healthBar;
+                healthBar.setPosition(zombies[i].getPosition().position);
+                healthBar.setSize(zombies[i].getPosition().size);
+                healthBar.setFillColor(sf::Color::Red);
+                window.draw(healthBar);
+
                 window.draw(zombies[i].getSprite());
             }
 
+            for(int i = 0; i < 100; i++) {
+                if(bullets[i].isInFlight()) {
+                    window.draw(bullets[i].getShape());
+                }
+			}
+
+            sf::RectangleShape healthBar;
+            healthBar.setPosition(player.getPosition().position);
+            healthBar.setSize(player.getPosition().size);
+            healthBar.setFillColor(sf::Color::Red);
+            window.draw(healthBar);
+
             window.draw(player.getSprite());
+
+            if (ammoPickup.isSpawned()) {
+				window.draw(ammoPickup.getSprite());
+            }
+            if (healthPickup.isSpawned()) {
+				window.draw(healthPickup.getSprite());
+            }
+
+
+			window.draw(spriteCrosshair);
         }
 
         window.display();
