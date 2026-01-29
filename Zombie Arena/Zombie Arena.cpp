@@ -27,7 +27,7 @@ int main()
     resolution.x = sf::VideoMode::getDesktopMode().size.x;
     resolution.y = sf::VideoMode::getDesktopMode().size.y;
 
-    sf::RenderWindow window(sf::VideoMode(sf::Vector2u(resolution.x, resolution.y)), "ZombieArena");
+    sf::RenderWindow window(sf::VideoMode(sf::Vector2u(resolution.x, resolution.y)), "ZombieArena", sf::State::Fullscreen);
     sf::View mainView(sf::FloatRect(sf::Vector2f(0, 0), resolution));
 
     sf::Clock clock;
