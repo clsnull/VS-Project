@@ -27,7 +27,7 @@ int main()
     resolution.x = sf::VideoMode::getDesktopMode().size.x;
     resolution.y = sf::VideoMode::getDesktopMode().size.y;
 
-    sf::RenderWindow window(sf::VideoMode(sf::Vector2u(resolution.x, resolution.y)), "ZombieArena", sf::State::Fullscreen);
+    sf::RenderWindow window(sf::VideoMode(sf::Vector2u(resolution.x, resolution.y)), "ZombieArena");
     sf::View mainView(sf::FloatRect(sf::Vector2f(0, 0), resolution));
 
     sf::Clock clock;
@@ -499,11 +499,11 @@ int main()
 
             for (int i = 0; i < numZombies; i++) {
 
-                sf::RectangleShape healthBar;
-                healthBar.setPosition(zombies[i].getPosition().position);
-                healthBar.setSize(zombies[i].getPosition().size);
-                healthBar.setFillColor(sf::Color::Red);
-                window.draw(healthBar);
+                sf::RectangleShape zombieRect;
+                zombieRect.setPosition(zombies[i].getPosition().position);
+                zombieRect.setSize(zombies[i].getPosition().size);
+                zombieRect.setFillColor(sf::Color::Red);
+                window.draw(zombieRect);
 
                 window.draw(zombies[i].getSprite());
             }
@@ -514,11 +514,11 @@ int main()
                 }
 			}
 
-            sf::RectangleShape healthBar;
-            healthBar.setPosition(player.getPosition().position);
-            healthBar.setSize(player.getPosition().size);
-            healthBar.setFillColor(sf::Color::Red);
-            window.draw(healthBar);
+            sf::RectangleShape playerRect;
+            playerRect.setPosition(player.getPosition().position);
+            playerRect.setSize(player.getPosition().size);
+            playerRect.setFillColor(sf::Color::Red);
+            window.draw(playerRect);
 
             if (ammoPickup.isSpawned()) {
 				window.draw(ammoPickup.getSprite());
