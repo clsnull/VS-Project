@@ -1,4 +1,6 @@
-﻿project("Run" LANGUAGES CXX)
+﻿cmake_minimum_required(VERSION 3.28)
+
+project("Run" LANGUAGES CXX)
 
 set(ENV{http_proxy} "http://127.0.0.1:7890")  # Clash/V2Ray默认端口
 set(ENV{https_proxy} "http://127.0.0.1:7890")
@@ -19,6 +21,6 @@ FetchContent_MakeAvailable(SFML)
 
 add_executable(main src/main.cpp)
 target_compile_features(main PRIVATE cxx_std_17)
-target_link_libraries(main PRIVATE SFML::Graphics)
+target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT main)
