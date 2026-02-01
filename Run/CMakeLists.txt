@@ -19,7 +19,13 @@ FetchContent_Declare(SFML
 
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp)
+# 如果有头文件目录
+include_directories(src)
+
+file(GLOB SOURCES "src/*.cpp")
+
+add_executable(main ${SOURCES})
+
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)
 
