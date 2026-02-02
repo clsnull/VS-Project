@@ -24,6 +24,22 @@ include_directories(src)
 
 file(GLOB SOURCES "src/*.cpp")
 
+# 复制整个目录
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/fonts
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+# 复制整个目录
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/graphics
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+# 复制整个目录
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/music
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+# 复制整个目录
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+# 复制整个目录
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/sound
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+
 add_executable(main ${SOURCES})
 
 target_compile_features(main PRIVATE cxx_std_17)
