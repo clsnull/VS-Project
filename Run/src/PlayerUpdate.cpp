@@ -26,11 +26,8 @@ void PlayerUpdate::assemble(
 {
     SoundEngine::SoundEngine();
 
-    // m_position.size.x = PLAYER_WIDTH;
-    // m_position.size.y = PLAYER_HEIGHT;
-    // 临时代码
-    m_position.size.x = PLAYER_WIDTH * 10;
-    m_position.size.y = PLAYER_HEIGHT * 10;
+    m_position.size.x = PLAYER_WIDTH;
+    m_position.size.y = PLAYER_HEIGHT;
 
     m_isPaused = levelUpdate->getIsPausedPointer();
 }
