@@ -46,8 +46,6 @@ int main()
 		{
 			gameObject.draw(canvas);
 		}
-		// 在下一章的临时代码
-		window.draw(canvas, factory.m_texture);
 
 		// 显示新的一帧
 		window.display();

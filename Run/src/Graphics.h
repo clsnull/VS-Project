@@ -3,7 +3,6 @@
 #include "Component.h"
 
 class Update;
-
 class Graphics : public Component
 {
 private:
