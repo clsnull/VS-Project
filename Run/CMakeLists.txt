@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.28)
 
 project("Run" LANGUAGES CXX)
 
@@ -22,7 +22,22 @@ FetchContent_MakeAvailable(SFML)
 # 如果有头文件目录
 include_directories(src)
 
-file(GLOB SOURCES "src/*.cpp")
+set(SOURCES
+    src/main.cpp
+    src/CameraGraphics.cpp
+    src/CameraUpdate.cpp
+    src/Component.cpp
+    src/Factory.cpp
+    src/GameObject.cpp
+    src/Graphics.cpp
+    src/InputDispatcher.cpp
+    src/InputReceiver.cpp
+    src/LevelUpdate.cpp
+    src/PlayerGraphics.cpp
+    src/PlayerUpdate.cpp
+    src/SoundEngine.cpp
+    src/Update.cpp
+)
 
 # 复制整个目录
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/fonts
