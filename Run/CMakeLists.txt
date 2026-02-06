@@ -37,6 +37,7 @@ set(SOURCES
     src/PlayerUpdate.cpp
     src/SoundEngine.cpp
     src/Update.cpp
+    src/PlatformUpdate.cpp
 )
 
 # 复制整个目录
