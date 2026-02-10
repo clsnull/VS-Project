@@ -34,10 +34,114 @@ void PlayerUpdate::assemble(
 
 void PlayerUpdate::handleInput()
 {
+    for (std::optional event : m_inputReceiver.getEvents())
+    {
+        if (const auto *keyPressed = event->getIf<sf::Event::KeyPressed>())
+        {
+            if (keyPressed->code == sf::Keyboard::Key::D)
+            {
+                m_rightIsHeldDown = true;
+            }
+            if (keyPressed->code == sf::Keyboard::Key::A)
+            {
+                m_leftIsHeldDown = true;
+            }
+            if (keyPressed->code == sf::Keyboard::Key::W)
+            {
+                m_boostIsHeldDown = true;
+            }
+            if (keyPressed->code == sf::Keyboard::Key::Space)
+            {
+                m_spaceHeldDown = true;
+            }
+        }
+        if (const auto *keyReleased = event->getIf<sf::Event::KeyReleased>())
+        {
+            if (keyReleased->code == sf::Keyboard::Key::D)
+            {
+                m_rightIsHeldDown = false;
+            }
+            if (keyReleased->code == sf::Keyboard::Key::A)
+            {
+                m_leftIsHeldDown = false;
+            }
+            if (keyReleased->code == sf::Keyboard::Key::W)
+            {
+                m_boostIsHeldDown = false;
+            }
+            if (keyReleased->code == sf::Keyboard::Key::Space)
+            {
+                m_spaceHeldDown = false;
+            }
+        }
+    }
     m_inputReceiver.clearEvents();
 }
 
 void PlayerUpdate::update(float timeTakenThisFrame)
 {
-    handleInput();
+    if (!*m_isPaused)
+    {
+        // 没有暂停
+        m_position.position.y += m_gravity * timeTakenThisFrame;
+        handleInput();
+        if (m_isGrounded)
+        {
+            if (m_rightIsHeldDown)
+            {
+                m_position.position.x += timeTakenThisFrame * m_runspeed;
+            }
+            if (m_leftIsHeldDown)
+            {
+                m_position.position.x -= timeTakenThisFrame * m_runspeed;
+            }
+        }
+        if (m_boostIsHeldDown)
+        {
+            m_position.position.y -= timeTakenThisFrame * m_boostspeed;
+            if (m_rightIsHeldDown)
+            {
+                m_position.position.x += timeTakenThisFrame * m_runspeed / 2;
+            }
+            if (m_leftIsHeldDown)
+            {
+                m_position.position.x -= timeTakenThisFrame * m_runspeed / 4;
+            }
+        }
+        if (m_spaceHeldDown && !m_inJump && m_isGrounded)
+        {
+            // SoundEngine::playJump();
+            m_inJump = true;
+            m_jumpClock.restart();
+        }
+        if (!m_spaceHeldDown)
+        {
+            // m_inJump = false;
+        }
+        if (m_inJump)
+        {
+            if (m_jumpClock.getElapsedTime().asSeconds() < m_jumpDuration / 2)
+            {
+                m_position.position.y -= m_jumpSpeed * timeTakenThisFrame;
+            }
+            else
+            {
+                m_position.position.y += m_jumpSpeed * timeTakenThisFrame;
+            }
+
+            if (m_jumpClock.getElapsedTime().asSeconds() > m_jumpDuration)
+            {
+                m_inJump = false;
+            }
+            if (m_rightIsHeldDown)
+            {
+                m_position.position.x += timeTakenThisFrame * m_runspeed;
+            }
+            if (m_leftIsHeldDown)
+            {
+                m_position.position.x -= timeTakenThisFrame * m_runspeed;
+            }
+        }
+        m_isGrounded = false;
+    }
 }

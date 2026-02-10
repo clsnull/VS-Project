@@ -77,8 +77,8 @@ void LevelUpdate::update(float timeSinceLastUpdate)
 
     if (m_timeSinceLastPlatform > m_platformCreationInterval)
     {
-        m_platformPositions[m_nextPlatformToMove]->position.x =
-            m_platformPositions[m_moveRelativeToPlatform]->position.x + getRandomNumber(-40, 40);
+        m_platformPositions[m_nextPlatformToMove]->position.y =
+            m_platformPositions[m_moveRelativeToPlatform]->position.y + getRandomNumber(-40, 40);
 
         if (m_platformPositions[m_moveRelativeToPlatform]->position.y < m_platformPositions[m_nextPlatformToMove]->position.y)
         {

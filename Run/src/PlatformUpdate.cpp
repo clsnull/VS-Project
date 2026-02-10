@@ -28,17 +28,17 @@ void PlatformUpdate::update(float fps)
 
         sf::Vector2f playerLeft(
             m_playerPosition->position.x,
-            m_playerPosition->size.y / 2);
+            m_playerPosition->position.y + m_playerPosition->size.y / 2);
 
         sf::Vector2f playerHead(
             m_playerPosition->position.x + m_playerPosition->size.x / 2,
-            m_playerPosition->size.y);
+            m_playerPosition->position.y);
 
         if (m_position.contains(playerFeet))
         {
-            if (playerFeet.y > m_position.position.x)
+            if (playerFeet.y > m_position.position.y)
             {
-                m_playerPosition->position.x = m_position.position.x - m_playerPosition->size.y;
+                m_playerPosition->position.y = m_position.position.y - m_playerPosition->size.y;
                 *m_playerIsGrounded = true;
             }
         }
@@ -52,7 +52,7 @@ void PlatformUpdate::update(float fps)
         }
         else if (m_position.contains(playerHead))
         {
-            m_playerPosition->position.y = m_position.position.x + m_position.size.y;
+            m_playerPosition->position.y = m_position.position.y + m_position.size.y;
         }
     }
 }
