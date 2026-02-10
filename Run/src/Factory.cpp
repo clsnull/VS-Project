@@ -11,6 +11,9 @@
 #include "CameraUpdate.h"
 #include "CameraGraphics.h"
 
+#include "PlatformUpdate.h"
+#include "PlatformGraphics.h"
+
 Factory::Factory(sf::RenderWindow *window)
 {
     m_window = window;
@@ -50,6 +53,24 @@ void Factory::loadLevel(
     gameObjects.push_back(player);
 
     levelUpdate->assemble(nullptr, playerUpdate);
+
+    for (int i = 0; i < 8; i++)
+    {
+        GameObject platform;
+        std::shared_ptr<PlatformUpdate> platformUpdate = std::make_shared<PlatformUpdate>();
+        platformUpdate->assemble(nullptr, playerUpdate);
+        platform.addComponent(platformUpdate);
+
+        std::shared_ptr<PlatformGraphics> platformGraphics = std::make_shared<PlatformGraphics>();
+        platformGraphics->assemble(
+            canvas,
+            platformUpdate,
+            sf::IntRect({PLATFORM_TEX_LEFT, PLATFORM_TEX_TOP}, {PLATFORM_TEX_WIDTH, PLATFORM_TEX_HEIGHT}));
+        platform.addComponent(platformGraphics);
+        gameObjects.push_back(platform);
+
+        levelUpdate->addPlatformPosition(platformUpdate->getPositionPointer());
+    }
 
     const float width = float(sf::VideoMode::getDesktopMode().size.x);
     const float height = float(sf::VideoMode::getDesktopMode().size.y);

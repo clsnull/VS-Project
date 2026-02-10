@@ -31,7 +31,7 @@ int main()
 
 	while (window.isOpen())
 	{
-		float timeTakenInSeconds = clock.reset().asSeconds();
+		float timeTakenInSeconds = clock.restart().asSeconds();
 		// 处理玩家输入
 		inputDispatcher.dispatchInputEvents();
 		// 清除上一帧

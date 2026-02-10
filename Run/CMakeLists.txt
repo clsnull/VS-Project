@@ -38,6 +38,7 @@ set(SOURCES
     src/SoundEngine.cpp
     src/Update.cpp
     src/PlatformUpdate.cpp
+    src/PlatformGraphics.cpp
 )
 
 # 复制整个目录

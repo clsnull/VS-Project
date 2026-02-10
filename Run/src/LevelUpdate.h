@@ -9,7 +9,7 @@ class LevelUpdate : public Update
 {
 private:
     // 是否暂停
-    bool m_isPaused = true;
+    bool m_isPaused = false;
     // 所有平台的位置和大小
     std::vector<sf::FloatRect *> m_platformPositions;
     // 当前游戏尝试运行的秒数
