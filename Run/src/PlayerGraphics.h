@@ -4,12 +4,14 @@
 #include <SFML/Graphics.hpp>
 
 class PlayerUpdate;
+class Animator;
 
 class PlayerGraphics : public Graphics
 {
 private:
     sf::FloatRect *m_position = nullptr;
     int m_vertexStartIndex = -999;
+    Animator *m_animator;
 
     sf::IntRect *m_sectionToDraw = new sf::IntRect;
     sf::IntRect *m_standingStillSectionToDraw = new sf::IntRect;
@@ -24,6 +26,7 @@ private:
     bool m_lastFacingRight = true;
 
 public:
+    ~PlayerGraphics();
     void assemble(
         sf::VertexArray &canvas,
         std::shared_ptr<Update> genericUpdate,

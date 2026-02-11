@@ -39,6 +39,7 @@ set(SOURCES
     src/Update.cpp
     src/PlatformUpdate.cpp
     src/PlatformGraphics.cpp
+    src/Animator.cpp
 )
 
 # 复制整个目录
