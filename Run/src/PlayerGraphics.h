@@ -13,8 +13,8 @@ private:
     int m_vertexStartIndex = -999;
     Animator *m_animator;
 
-    sf::IntRect *m_sectionToDraw = new sf::IntRect;
-    sf::IntRect *m_standingStillSectionToDraw = new sf::IntRect;
+    sf::IntRect *m_sectionToDraw = nullptr;
+    sf::IntRect *m_standingStillSectionToDraw = nullptr;
 
     std::shared_ptr<PlayerUpdate> m_playerUpdate;
 

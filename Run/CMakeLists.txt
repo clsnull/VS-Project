@@ -40,6 +40,9 @@ set(SOURCES
     src/PlatformUpdate.cpp
     src/PlatformGraphics.cpp
     src/Animator.cpp
+    src/MenuUpdate.cpp
+    src/MenuGraphics.cpp
+    src/RainGraphics.cpp
 )
 
 # 复制整个目录

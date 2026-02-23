@@ -30,7 +30,7 @@ SoundEngine::SoundEngine()
 
 void SoundEngine::playClick()
 {
-    SoundEngine::m_clickSound->play();
+    // SoundEngine::m_clickSound->play();
 }
 
 void SoundEngine::playJump()

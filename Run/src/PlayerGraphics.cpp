@@ -196,6 +196,4 @@ void PlayerGraphics::draw(sf::VertexArray &canvas)
 PlayerGraphics::~PlayerGraphics()
 {
     delete m_animator;
-    delete m_sectionToDraw;
-    delete m_standingStillSectionToDraw;
 }
