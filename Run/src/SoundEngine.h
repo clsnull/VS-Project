@@ -12,6 +12,9 @@ private:
     static sf::SoundBuffer m_jumpBuffer;
     static sf::Sound* m_jumpSound;
 
+    static sf::SoundBuffer mFireballLaunchBuffer;
+    static sf::Sound mFireballLaunchSound;
+
 public:
     SoundEngine();
     static SoundEngine *m_sInstance;

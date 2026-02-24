@@ -8,6 +8,7 @@ sf::Music SoundEngine::music;
 
 sf::SoundBuffer SoundEngine::m_clickBuffer;
 sf::Sound* SoundEngine::m_clickSound = nullptr;
+
 sf::SoundBuffer SoundEngine::m_jumpBuffer;
 sf::Sound* SoundEngine::m_jumpSound = nullptr;
 
