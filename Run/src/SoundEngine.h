@@ -13,7 +13,7 @@ private:
     static sf::Sound* m_jumpSound;
 
     static sf::SoundBuffer mFireballLaunchBuffer;
-    static sf::Sound mFireballLaunchSound;
+    static sf::Sound* mFireballLaunchSound;
 
 public:
     SoundEngine();
@@ -27,5 +27,5 @@ public:
 
     static void playClick();
     static void playJump();
-    ~SoundEngine();
+    static void playFireballLaunch(sf::Vector2f playerPosition, sf::Vector2f soundLocation);
 };

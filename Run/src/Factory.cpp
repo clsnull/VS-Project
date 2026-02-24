@@ -19,6 +19,9 @@
 
 #include "RainGraphics.h"
 
+#include "FireballGraphics.h"
+#include "FireballUpdate.h"
+
 Factory::Factory(sf::RenderWindow *window)
 {
     m_window = window;
@@ -163,5 +166,21 @@ void Factory::loadLevel(
             rain.addComponent(rainGraphics);
             gameObjects.push_back(rain);
         }
+    }
+
+    for (int i = 0; i < 12; i++)
+    {
+        GameObject fireball;
+        std::shared_ptr<FireballUpdate> fireballUpdate = std::make_shared<FireballUpdate>(levelUpdate->getIsPausedPointer());
+
+        fireballUpdate->assemble(levelUpdate, playerUpdate);
+        fireball.addComponent(fireballUpdate);
+
+        std::shared_ptr<FireballGraphics> fireballGraphics = std::make_shared<FireballGraphics>();
+
+        fireballGraphics->assemble(canvas, fireballUpdate,sf::IntRect({870, 0}, {32, 32}));
+
+        fireball.addComponent(fireballGraphics);
+        gameObjects.push_back(fireball);
     }
 }

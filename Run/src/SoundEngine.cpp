@@ -7,14 +7,23 @@ bool SoundEngine::mMusicIsPlaying = false;
 sf::Music SoundEngine::music;
 
 sf::SoundBuffer SoundEngine::m_clickBuffer;
-sf::Sound* SoundEngine::m_clickSound = nullptr;
+sf::Sound *SoundEngine::m_clickSound = nullptr;
 
 sf::SoundBuffer SoundEngine::m_jumpBuffer;
-sf::Sound* SoundEngine::m_jumpSound = nullptr;
+sf::Sound *SoundEngine::m_jumpSound = nullptr;
+
+sf::SoundBuffer SoundEngine::mFireballLaunchBuffer;
+sf::Sound *SoundEngine::mFireballLaunchSound = nullptr;
 
 SoundEngine::SoundEngine()
 {
     assert(m_sInstance == nullptr);
+
+    std::cout << "SoundEngine constructor" << std::endl;
+
+    sf::Listener::setDirection({1.f, 0.f, 0.f});
+    sf::Listener::setUpVector({1.f, 1.f, 0.f});
+    sf::Listener::setGlobalVolume(100.f);
 
     m_sInstance = this;
     if (!m_clickBuffer.loadFromFile("sound/click.wav"))
@@ -27,6 +36,12 @@ SoundEngine::SoundEngine()
         std::cout << "加载音频失败" << std::endl;
     }
     SoundEngine::m_jumpSound = new sf::Sound(m_jumpBuffer);
+
+    if (!mFireballLaunchBuffer.loadFromFile("sound/fireballLaunch.wav"))
+    {
+        std::cout << "加载音频失败" << std::endl;
+    }
+    SoundEngine::mFireballLaunchSound = new sf::Sound(mFireballLaunchBuffer);
 }
 
 void SoundEngine::playClick()
@@ -63,7 +78,24 @@ void SoundEngine::stopMusic()
     mMusicIsPlaying = false;
 }
 
-SoundEngine::~SoundEngine(){
-    delete m_clickSound;
-    delete m_jumpSound;
+void SoundEngine::playFireballLaunch(sf::Vector2f playerPosition, sf::Vector2f soundLocation)
+{
+    mFireballLaunchSound->setRelativeToListener(true);
+
+    if (playerPosition.x > soundLocation.x)
+    {
+        // 左边声音
+        sf::Listener::setPosition({0, 0, 0.f});
+        mFireballLaunchSound->setPosition({-100, 0, 0.f});
+        mFireballLaunchSound->setMinDistance(100);
+        mFireballLaunchSound->setAttenuation(0);
+    }
+    else
+    {
+        sf::Listener::setPosition({0, 0, 0.f});
+        mFireballLaunchSound->setPosition({100, 0, 0.f});
+        mFireballLaunchSound->setMinDistance(100);
+        mFireballLaunchSound->setAttenuation(0);
+    }
+    mFireballLaunchSound->play();
 }

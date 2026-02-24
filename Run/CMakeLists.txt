@@ -43,6 +43,8 @@ set(SOURCES
     src/MenuUpdate.cpp
     src/MenuGraphics.cpp
     src/RainGraphics.cpp
+    src/FireballGraphics.cpp
+    src/FireballUpdate.cpp
 )
 
 # 复制整个目录
