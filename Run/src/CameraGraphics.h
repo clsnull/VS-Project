@@ -18,15 +18,25 @@ private:
     const float MIN_WIDTH = 640.0f;
     const float MAX_WIDTH = 2000.0f;
 
-    sf::Text* m_text = nullptr;
+    sf::Text *m_text = nullptr;
     sf::Font m_font;
     int m_timeAtEndOfGame = 0;
     float m_time = 0;
 
+    sf::Shader m_shader;
+    bool m_showShader = false;
+    bool m_backgrounsAreFlipped = false;
+    sf::Clock m_shaderClock;
+
+    sf::Vector2f m_playersPreviousPosition;
+    sf::Texture m_backgroundTexture;
+    std::unique_ptr<sf::Sprite> m_backgroundSprite;
+    std::unique_ptr<sf::Sprite> m_backgroundSprite2;
+
 public:
     CameraGraphics(
         sf::RenderWindow *window,
-        sf::Texture * texture,
+        sf::Texture *texture,
         sf::Vector2f viewSize,
         sf::FloatRect viewport);
     float *getTimeConnection();
